@@ -11,6 +11,9 @@
 # $ docker run --rm --privileged docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
 # $ cat /proc/sys/fs/binfmt_misc/qemu-aarch64
 
+# $ chmod +x buildx-tags.sh
+# $ ./buildx-tags.sh
+
 set -e
 
 echo "Start BUILDX"

@@ -6,7 +6,7 @@
 # nslookup, iperf, nmap
 ########################
 #
-FROM alpine:3.13.5
+FROM alpine:3.13
 MAINTAINER DevDotNet.Org <anton@devdotnet.org>
 LABEL maintainer="DevDotNet.Org <anton@devdotnet.org>"
 
@@ -24,9 +24,9 @@ COPY copyables /
 
 #Install
 RUN apk update \
-	&& apk add --no-cache bash sed mc htop openssh-server \
+	&& apk add --no-cache --upgrade sudo bash sed mc htop openssh-server \
 #Net utils
-	&& apk add --no-cache iputils paris-traceroute perl-net-telnet bind-tools iperf nmap \
+	&& apk add --no-cache --upgrade iputils paris-traceroute perl-net-telnet bind-tools iperf nmap \
 #Cleaning
 	&& rm -rf /var/lib/{cache,log}/ \
 	&& rm -rf /var/lib/apt/lists/*.lz4 \	

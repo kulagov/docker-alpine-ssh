@@ -1,6 +1,6 @@
 # Docker Image Alpine with sshd
 
-Docker official Image Alpine 3.12 with sshd started. Password authentication.
+Docker official Image Alpine 3.13 with sshd started. Password authentication.
 
 #### Upstream Links
 
@@ -20,19 +20,19 @@ Docker official Image Alpine 3.12 with sshd started. Password authentication.
 
 Tags  | Dockerfile  | OS Version  |  Soft
 ------------- | --  | --  | --
-`:latest` `:amd64` | [Dockerfile](https://github.com/devdotnetorg/docker-alpine-ssh/blob/master/Dockerfile.alpine) | `alpine:3.12` | Openssh-server
+`:latest` `:amd64` | [Dockerfile](https://github.com/devdotnetorg/docker-alpine-ssh/blob/master/Dockerfile.alpine) | `alpine:3.13` | Openssh-server
 
 ### Linux arm64 Tags ###
 
 Tags  | Dockerfile  | OS Version  |  Soft
 ------------- | --  | --  | --
-`:latest` `:aarch64` | [Dockerfile](https://github.com/devdotnetorg/docker-alpine-ssh/blob/master/Dockerfile.alpine) | `alpine:3.12` | Openssh-server
+`:latest` `:aarch64` | [Dockerfile](https://github.com/devdotnetorg/docker-alpine-ssh/blob/master/Dockerfile.alpine) | `alpine:3.13` | Openssh-server
 
 ### Linux arm32 Tags ###
 
 Tags  | Dockerfile  | OS Version  |  Soft
 ------------- | --  | --  | --
-`:latest` `:armhf` | [Dockerfile](https://github.com/devdotnetorg/docker-alpine-ssh/blob/master/Dockerfile.alpine) | `alpine:3.12` | Openssh-server
+`:latest` `:armhf` | [Dockerfile](https://github.com/devdotnetorg/docker-alpine-ssh/blob/master/Dockerfile.alpine) | `alpine:3.13` | Openssh-server
 
 ## Quick Start
  
@@ -40,15 +40,15 @@ Tags  | Dockerfile  | OS Version  |  Soft
  
 Set variable of password for root user:
 
-`-e PASSWORD=123456`
+`-e PSWD=123456`
 
 Run container with public port for connections is 222, password for user root is 123456, volume alpine-data for transfer data in/out of container:
 
-`$ docker run -d --name alpine-sshd -p 222:22 -e PASSWORD=123456 -v alpine-data:/data devdotnetorg/alpine-ssh`
+`$ docker run -d --name alpine-sshd -p 222:22 -e PSWD=123456 -v alpine-data:/data devdotnetorg/alpine-ssh`
 
 For network is mynetwork:
 
-`$ docker run -d --name alpine-sshd --net mynetwork --ip 172.18.0.20 -p 222:22 -e PASSWORD=123456 -v alpine-data:/data devdotnetorg/alpine-ssh`
+`$ docker run -d --name alpine-sshd --net mynetwork --ip 172.18.0.20 -p 222:22 -e PSWD=123456 -v alpine-data:/data devdotnetorg/alpine-ssh`
 
 ## Connect to container
 

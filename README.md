@@ -5,7 +5,7 @@ Docker official Image Alpine 3.13 with sshd started. Password authentication.
 #### Upstream Links
 
 * Docker Registry @ [devdotnetorg/alpine-ssh](https://hub.docker.com/r/devdotnetorg/alpine-ssh)
-* GitHub @ [devdotnetorg/ubuntu-1604-ssh](https://github.com/devdotnetorg/docker-alpine-ssh)
+* GitHub @ [devdotnetorg/docker-alpine-ssh](https://github.com/devdotnetorg/docker-alpine-ssh)
 
 ## Features
 

@@ -6,7 +6,7 @@
 # nslookup, iperf, nmap
 ########################
 #
-ARG ALPINE_VER #Alpine OS version
+ARG ALPINE_VER=3.14.0 #Alpine OS version
 
 FROM alpine:$ALPINE_VER
 MAINTAINER DevDotNet.Org <anton@devdotnet.org>

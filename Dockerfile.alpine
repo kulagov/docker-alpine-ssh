@@ -6,7 +6,9 @@
 # nslookup, iperf, nmap
 ########################
 #
-FROM alpine:3.13
+ARG ALPINE_VER #Alpine OS version
+
+FROM alpine:$ALPINE_VER
 MAINTAINER DevDotNet.Org <anton@devdotnet.org>
 LABEL maintainer="DevDotNet.Org <anton@devdotnet.org>"
 

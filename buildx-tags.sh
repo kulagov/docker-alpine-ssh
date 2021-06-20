@@ -18,13 +18,30 @@ set -e
 
 echo "Start BUILDX"
 
+# 3.14.0
+
 #:amd64
-docker buildx build --platform linux/amd64 -f Dockerfile.alpine -t devdotnetorg/alpine-ssh:amd64 . --push
+docker buildx build --platform linux/amd64 -f Dockerfile.alpine --build-arg ALPINE_VER=3.14.0 -t devdotnetorg/alpine-ssh:alpine-3.14.0-amd64 . --push
 #:aarch64
-docker buildx build --platform linux/arm64 -f Dockerfile.alpine -t devdotnetorg/alpine-ssh:aarch64 . --push
+docker buildx build --platform linux/arm64 -f Dockerfile.alpine --build-arg ALPINE_VER=3.14.0 -t devdotnetorg/alpine-ssh:alpine-3.14.0-aarch64 . --push
 #:armhf
-docker buildx build --platform linux/arm -f Dockerfile.alpine -t devdotnetorg/alpine-ssh:armhf . --push
+docker buildx build --platform linux/arm -f Dockerfile.alpine --build-arg ALPINE_VER=3.14.0 -t devdotnetorg/alpine-ssh:alpine-3.14.0-armhf . --push
+#:all platform
+docker buildx build --platform linux/arm,linux/arm64,linux/amd64 -f Dockerfile.alpine --build-arg ALPINE_VER=3.14.0 -t devdotnetorg/alpine-ssh:alpine-3.14.0 . --push
+
+# 3.13.5
+
+#:amd64
+docker buildx build --platform linux/amd64 -f Dockerfile.alpine --build-arg ALPINE_VER=3.13.5 -t devdotnetorg/alpine-ssh:alpine-3.13.5-amd64 . --push
+#:aarch64
+docker buildx build --platform linux/arm64 -f Dockerfile.alpine --build-arg ALPINE_VER=3.13.5 -t devdotnetorg/alpine-ssh:alpine-3.13.5-aarch64 . --push
+#:armhf
+docker buildx build --platform linux/arm -f Dockerfile.alpine --build-arg ALPINE_VER=3.13.5 -t devdotnetorg/alpine-ssh:alpine-3.13.5-armhf . --push
+#:all platform
+docker buildx build --platform linux/arm,linux/arm64,linux/amd64 -f Dockerfile.alpine --build-arg ALPINE_VER=3.13.5 -t devdotnetorg/alpine-ssh:alpine-3.13.5 . --push
+
+
 #:latest
-docker buildx build --platform linux/arm,linux/arm64,linux/amd64 -f Dockerfile.alpine -t devdotnetorg/alpine-ssh:latest . --push
+docker buildx build --platform linux/arm,linux/arm64,linux/amd64 -f Dockerfile.alpine --build-arg ALPINE_VER=3.14.0 -t devdotnetorg/alpine-ssh:latest . --push
 
 echo "BUILDX END"
